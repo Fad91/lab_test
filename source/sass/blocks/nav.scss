@@ -1,0 +1,105 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+
+  @include vp--1023 {
+    flex-wrap: wrap;
+    padding: 0 0 0 16px;
+  }
+}
+
+.nav--closed {
+  transition: background-color 0.5s ease;
+  background: none;
+}
+
+.nav__logo {
+  @include vp--1023 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.nav--opened use {
+  transition: fill 0.5s ease;
+  fill: $color-black;
+}
+
+.nav--closed use {
+  transition: fill 0.5s ease;
+  fill: $color-white;
+}
+
+.nav__button {
+  display: none;
+
+  @include vp--1023 {
+    display: block;
+    width: 62px;
+    height: 62px;
+    background-color: transparent;
+    border: none;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.5s ease;
+
+    &::before {
+      content: "";
+      width: 23px;
+      height: 3px;
+      background-color: $color-white;
+      position: absolute;
+      top: 25px;
+      left: 22px;
+      box-shadow: 0 10px 0 0 $color-white;
+      transition: all 0.5s ease;
+    }
+  }
+
+  &:hover {
+    background-color: $color-primary-disabled;
+  }
+
+  &:hover::before {
+    background-color: $color-black;
+    box-shadow: 0 10px 0 0 $color-black;
+  }
+}
+
+.nav__button--opened {
+  @include vp--1023 {
+    &::before,
+    &::after {
+      content: "";
+      width: 2px;
+      height: 32px;
+      background-color: $color-black;
+      border: none;
+      padding: 0;
+      display: block;
+      position: absolute;
+    }
+
+    &::before {
+      transform: rotate(-45deg);
+      top: 13px;
+      left: 33px;
+      box-shadow: none;
+    }
+
+    &:hover::before,
+    &:hover::after {
+      background-color: $color-gray;
+      box-shadow: none;
+    }
+
+    &::after {
+      transform: rotate(45deg);
+      top: 13px;
+      left: 33px;
+    }
+  }
+}

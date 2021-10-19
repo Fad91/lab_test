@@ -1,0 +1,93 @@
+.review-section {
+  padding: 56px 0 39px;
+  background-color: #f6f8fa;
+  position: relative;
+
+  @include vp--1023 {
+    padding: 28px 0 39px;
+  }
+
+  @include vp--767 {
+    padding: 28px 0 31px;
+  }
+}
+
+.review-section__wrapper {
+  max-width: 1087px;
+  margin: 0 auto 50px auto;
+  display: flex;
+  column-gap: 32px;
+  row-gap: 50px;
+  align-items: center;
+  overflow-x: hidden;
+
+  @include vp--1219 {
+    max-width: 728px;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    overflow-x: hidden;
+  }
+
+  @include vp--767 {
+    max-width: 375px;
+    padding: 0 16px;
+    margin-bottom: 17px;
+  }
+}
+
+.review-section__title {
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 56px;
+  text-align: center;
+  color: #191c1f;
+  margin: 0 0 29px 0;
+  padding-right: 20px;
+
+  @include vp--1023 {
+    margin: 0;
+  }
+
+  @include vp--767 {
+    font-size: 24px;
+    line-height: 32px;
+    padding: 0;
+  }
+}
+
+.review-section__button {
+  width: 32px;
+  display: block;
+  height: 150px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  position: absolute;
+
+  @include vp--1219 {
+    display: none;
+  }
+}
+
+.review-section__button--left {
+  top: 39%;
+  left: 0;
+}
+
+.review-section__button--right {
+  top: 39%;
+  right: 0;
+}
+
+.review-section__button .review-section__svg use {
+  fill: #c2c8cd;
+}
+
+.review-section__svg:hover use {
+  fill: #25cd82;
+}
+
+.review-section__button--active .review-section__svg use {
+  fill: $color-primary;
+}

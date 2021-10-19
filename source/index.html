@@ -1,13 +1,247 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Стартовый шаблон</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Лаборатория Интернет</title>
+  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 </head>
+
 <body>
-  <h1>Добро пожаловать в Лигу А.</h1>
+  <div class="visually-hidden">
+    <include src="build/img/sprite_auto.svg"></include>
+  </div>
+  <div class="intro">
+    <header class="header">
+      <nav class="nav">
+        <div class="nav__logo">
+          <svg width="120" height="24" viewBox="0 0 120 24">
+            <use href="#icon-logo" fill="white"></use>
+          </svg>
+        </div>
+        <button class="nav__button nav__button--closed">
+          <span class="visually-hidden">Открыть меню</span>
+        </button>
+        <ul class="main-menu main-menu--closed">
+          <li class="main-menu__item">
+            <a href="#description" class="main-menu__link">
+              Как это работает
+              <svg width="24" height="20" viewBox="0 0 24 20" fill="none">
+                <use href="#icon-nav-arrow"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="main-menu__item">
+            <a href="#third" class="main-menu__link">3-й блок
+              <svg width="24" height="20" viewBox="0 0 24 20" fill="none">
+                <use href="#icon-nav-arrow"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="main-menu__item">
+            <a href="#review" class="main-menu__link">Вопросы и ответы
+              <svg width="24" height="20" viewBox="0 0 24 20" fill="none">
+                <use href="#icon-nav-arrow"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="main-menu__item">
+            <a href="#" class="main-menu__link">Форма
+              <svg width="24" height="20" viewBox="0 0 24 20" fill="none">
+                <use href="#icon-nav-arrow"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <section class="intro-section">
+      <div class="intro-section__block">
+        <h1 class="visually-hidden">Интернет-агенство "Лаборатория Интернет"</h1>
+        <h2 class="intro-section__title">Говорят, никогда не поздно сменить профессию</h2>
+        <p class="intro-section__content">Сделай круто тестовое задание и у тебя получится</p>
+        <button type="button" class="intro-section__button">Проще простого!</button>
+      </div>
+    </section>
+  </div>
+  <main>
+    <section class="description-section" id="description">
+      <h2 class="description-section__title">Как это работает</h2>
+      <ul class="description-list">
+        <li class="description-list__item description-item">
+          <h3 class="description-item__title">Прочитай задание внимательно</h3>
+          <p class="description-item__content">Думаю у тебя не займет это больше двух-трех минут</p>
+        </li>
+        <li class="description-list__item description-item">
+          <h3 class="description-item__title">Изучи весь макет заранее</h3>
+          <p class="description-item__content">Подумай как это будет работать на разных разрешениях и при скролле</p>
+        </li>
+        <li class="description-list__item description-item">
+          <h3 class="description-item__title">Сделай хорошо</h3>
+          <p class="description-item__content">Чтобы мы могли тебе доверить подобные задачи в будущем</p>
+        </li>
+        <li class="description-list__item description-item">
+          <h3 class="description-item__title">Получи предложение</h3>
+          <p class="description-item__content">Ну тут все просто, не я придумал правила, но думаю так и будет)))</p>
+        </li>
+      </ul>
+    </section>
+    <section class="third-block" id="third">
+      <div class="third-block__text">
+        <h2 class="third-block__title">Круто, ты дошел до третьего блока</h2>
+        <p class="third-block__content">63% опрошенных пользовались кредитами из-за того, что не могли покрыть
+          непредвиденные расходы свыше 15 000 ₽.
+        </p>
+        <p class="third-block__content">Доступ к заработанным деньгам помогает отказаться от кредитов и экономить деньги
+          на процентах и штрафах.</p>
+      </div>
+      <div class="third-block__image">
+        <img src="img/desktop-third-block-image.png" alt="иллюстрация доступа к заработку через приложение" width="592"
+          height="448">
+      </div>
+    </section>
+    <section class="review-section" id="review">
+      <h2 class="review-section__title">Отзывы</h2>
+      <button type="button" class="review-section__button review-section__button--left">
+        <svg width="32" height="32" viewBox="0 0 32 32" class="review-section__svg">
+          <use href="#icon-arrow-left" fill="none"></use>
+        </svg>
+      </button>
+      <div class="review-section__wrapper">
+
+        <ul class="review-list">
+          <li class="review-list__item review-item">
+            <a href="#" class="review-item__link">
+              <div class="review-item__top-wrapper">
+                <img src="img/user-empty-photo.jpg" alt="Фото пользователя" width="44" height="44">
+                <h3 class="review-item__title">Константинов Михаил Павлович</h3>
+                <span class="review-item__city">Санкт-Петербург</span>
+              </div>
+              <p class="review-item__content">Каждый из нас понимает очевидную вещь: перспективное планирование
+                предоставляет широкие возможности для
+                анализа существующих паттернов поведения. В своём стремлении улучшить пользовательский опыт мы</p>
+            </a>
+          </li>
+          <li class="review-list__item review-item">
+            <a href="#" class="review-item__link">
+              <div class="review-item__top-wrapper">
+                <img src="img/user-first-photo.jpg" alt="Фото пользователя" width="44" height="44">
+                <h3 class="review-item__title">Иван Иванов</h3>
+                <span class="review-item__city">Санкт-Петербург</span>
+              </div>
+              <p class="review-item__content">Каждый из нас понимает очевидную вещь: перспективное планирование
+                предоставляет широкие возможности для
+                анализа существующих паттернов поведения. В своём стремлении улучшить пользовательский опыт мы
+                упускаем,
+                что активно развивающиеся страны третьего мира призваны к ответу.</p>
+            </a>
+          </li>
+          <li class="review-list__item review-item">
+            <a href="#" class="review-item__link">
+              <div class="review-item__top-wrapper">
+                <img src="img/user-second-photo.jpg" alt="Фото пользователя" width="44" height="44">
+                <h3 class="review-item__title">Артем Корнилов</h3>
+                <span class="review-item__city">Самара</span>
+              </div>
+              <p class="review-item__content">Каждый из нас понимает очевидную вещь: перспективное планирование
+                предоставляет широкие возможности для
+                анализа существующих паттернов поведения.</p>
+            </a>
+          </li>
+          <li class="review-list__item review-item">
+            <a href="#" class="review-item__link">
+              <div class="review-item__top-wrapper">
+                <img src="img/user-second-photo.jpg" alt="Фото пользователя" width="44" height="44">
+                <h3 class="review-item__title">Артем Корнилов</h3>
+                <span class="review-item__city">Самара</span>
+              </div>
+              <p class="review-item__content">Каждый из нас понимает очевидную вещь: перспективное планирование
+                предоставляет широкие возможности для
+                анализа существующих паттернов поведения.</p>
+            </a>
+          </li>
+          <li class="review-list__item review-item">
+            <a href="#" class="review-item__link">
+              <div class="review-item__top-wrapper">
+                <img src="img/user-second-photo.jpg" alt="Фото пользователя" width="44" height="44">
+                <h3 class="review-item__title">Артем Корнилов</h3>
+                <span class="review-item__city">Самара</span>
+              </div>
+              <p class="review-item__content">Каждый из нас понимает очевидную вещь: перспективное планирование
+                предоставляет широкие возможности для
+                анализа существующих паттернов поведения.</p>
+            </a>
+          </li>
+          <li class="review-list__item review-item">
+            <a href="#" class="review-item__link">
+              <div class="review-item__top-wrapper">
+                <img src="img/user-second-photo.jpg" alt="Фото пользователя" width="44" height="44">
+                <h3 class="review-item__title">Артем Корнилов</h3>
+                <span class="review-item__city">Самара</span>
+              </div>
+              <p class="review-item__content">Каждый из нас понимает очевидную вещь: перспективное планирование
+                предоставляет широкие возможности для
+                анализа существующих паттернов поведения.</p>
+            </a>
+          </li>
+        </ul>
+
+      </div>
+      <button type="button" class="review-section__button review-section__button--right">
+        <svg width="32" height="32" viewBox="0 0 32 32" class="review-section__svg">
+          <use href="#icon-arrow-right" fill="none"></use>
+        </svg>
+      </button>
+
+      <ul class="slider-crumbs">
+        <li class="slider-crumbs__item">
+          <button type="button">
+            <svg width="8" height="8" viewBox="0 0 8 8">
+              <use href="#icon-slider" fill="none"></use>
+            </svg>
+          </button>
+        </li>
+        <li class="slider-crumbs__item">
+          <button type="button">
+            <svg width="8" height="8" viewBox="0 0 8 8">
+              <use href="#icon-slider" fill="none"></use>
+            </svg>
+          </button>
+        </li>
+        <li class="slider-crumbs__item">
+          <button type="button">
+            <svg width="8" height="8" viewBox="0 0 8 8">
+              <use href="#icon-slider" fill="none"></use>
+            </svg>
+          </button>
+        </li>
+        <li class="slider-crumbs__item">
+          <button type="button">
+            <svg width="8" height="8" viewBox="0 0 8 8">
+              <use href="#icon-slider" fill="none"></use>
+            </svg>
+          </button>
+        </li>
+        <li class="slider-crumbs__item">
+          <button type="button">
+            <svg width="8" height="8" viewBox="0 0 8 8">
+              <use href="#icon-slider" fill="none"></use>
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </section>
+  </main>
+  <footer class="footer">
+    <h2 class="footer__title">
+      <a href="https://internetlab.ru/">© 2021 Лаборатория интернет</a>
+    </h2>
+  </footer>
+  <script src="js/vendor.js"></script>
+  <script src="js/script.js"></script>
 </body>
+
 </html>

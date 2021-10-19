@@ -1,0 +1,66 @@
+.description-item {
+  padding-top: 90px;
+  position: relative;
+
+  @include vp--1023 {
+    padding: 0 0 0 72px;
+  }
+
+  @include vp--767 {
+    padding: 0 0 0 63px;
+  }
+}
+
+.description-item::before {
+  content: "";
+  width: 72px;
+  height: 72px;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  @include vp--1023 {
+    width: 56px;
+    height: 56px;
+  }
+
+  @include vp--767 {
+    left: -10px;
+  }
+}
+
+.description-item:first-child::before {
+  background: url("../img/icon-cursor-clock.svg") no-repeat;
+  background-size: cover;
+}
+
+.description-item:nth-child(2)::before {
+  background: url("../img/icon-truck.svg") no-repeat;
+  background-size: cover;
+}
+
+.description-item:nth-child(3)::before {
+  background: url("../img/icon-secure.svg") no-repeat;
+  background-size: cover;
+}
+
+.description-item:nth-child(4)::before {
+  background: url("../img/icon-moneybags.svg") no-repeat;
+  background-size: cover;
+}
+
+.description-item__title {
+  margin: 0 0 4px 0;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: #191c1f;
+}
+
+.description-item__content {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #5e646a;
+  margin: 0;
+}
