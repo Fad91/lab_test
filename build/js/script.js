@@ -92,29 +92,6 @@ let counter = 0;
 
 rightButton.classList.add("review-section__button--active");
 
-leftButton.addEventListener("click", function () {
-  if (counter > 0) {
-    slideList.style.transform = "translateX(0)";
-    counter -= 3;
-    console.log(counter)
-  }
-  else if (counter === 0) {
-    changeLeftButtonActivity();
-  }
-});
-
-rightButton.addEventListener("click", function () {
-  if (counter < slidesLength) {
-    slideList.style.transform = "translateX(-1118px)";
-    counter += 3;
-    console.log(counter);
-    leftButton.classList.add("review-section__button--active");
-    if (counter > slidesLength || counter % slidesLength === 0) {
-      changeRightButtonActivity();
-    }
-  }
-});
-
 let changeRightButtonActivity = function () {
   rightButton.classList.remove("review-section__button--active");
   rightButton.disabled = true;
@@ -124,3 +101,33 @@ let changeLeftButtonActivity = function () {
   leftButton.classList.remove("review-section__button--active");
   leftButton.disabled = true;
 };
+
+leftButton.addEventListener("click", function () {
+  if (counter > 0) {
+    counter -= 3;
+    let itemWidth = 1118 / 3;
+    slideList.style.transform =
+      "translateX(" + -1 * counter * itemWidth + "px)";
+
+    rightButton.classList.add("review-section__button--active");
+    rightButton.disabled = false;
+  }
+  if (counter === 0) {
+    changeLeftButtonActivity();
+  }
+});
+
+rightButton.addEventListener("click", function () {
+  if (counter < slidesLength) {
+    counter += 3;
+    const itemWidth = 1118 / 3;
+    slideList.style.transform =
+      "translateX(" + -1 * counter * itemWidth + "px)";
+
+    leftButton.classList.add("review-section__button--active");
+    leftButton.disabled = false;
+    if (counter > slidesLength - 3 || counter % (slidesLength - 3) === 0) {
+      changeRightButtonActivity();
+    }
+  }
+});
