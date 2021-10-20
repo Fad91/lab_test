@@ -89,8 +89,18 @@ let slideList = document.querySelector(".review-list");
 let slides = document.querySelectorAll(".review-item");
 let slidesLength = slides.length;
 let counter = 0;
+let crumbCounter = 0;
+let sliderCrumbsImg = document.querySelectorAll(".slider-crumbs__svg");
+let smallDesktopMedia = window.matchMedia("(max-width: 1219px)");
+let tabletMedia = window.matchMedia("(max-width: 1023px)");
 
 rightButton.classList.add("review-section__button--active");
+sliderCrumbsImg[0].classList.add("slider-crumbs__svg--active");
+
+let changeButtonActivity = function (button) {
+  button.classList.remove("review-section__button--active");
+  button.disabled = true;
+};
 
 let changeRightButtonActivity = function () {
   rightButton.classList.remove("review-section__button--active");
@@ -103,31 +113,93 @@ let changeLeftButtonActivity = function () {
 };
 
 leftButton.addEventListener("click", function () {
-  if (counter > 0) {
+  if (!smallDesktopMedia.matches && counter > 0) {
     counter -= 3;
+    crumbCounter--;
     let itemWidth = 1118 / 3;
     slideList.style.transform =
       "translateX(" + -1 * counter * itemWidth + "px)";
 
     rightButton.classList.add("review-section__button--active");
     rightButton.disabled = false;
+    sliderCrumbsImg[crumbCounter].classList.add("slider-crumbs__svg--active");
+    sliderCrumbsImg[crumbCounter + 1].classList.remove(
+      "slider-crumbs__svg--active"
+    );
   }
   if (counter === 0) {
-    changeLeftButtonActivity();
+    changeButtonActivity(leftButton);
+  } else if (smallDesktopMedia.matches) {
+    if (counter > 0) {
+      counter -= 2;
+      crumbCounter--;
+      let itemWidth = 766 / 2;
+      slideList.style.transform =
+        "translateX(" + -1 * counter * itemWidth + "px)";
+
+      rightButton.classList.add("review-section__button--active");
+      rightButton.disabled = false;
+      sliderCrumbsImg[crumbCounter].classList.add("slider-crumbs__svg--active");
+      sliderCrumbsImg[crumbCounter + 1].classList.remove(
+        "slider-crumbs__svg--active"
+      );
+    }
+    if (counter === 0) {
+      changeButtonActivity(leftButton);
+    }
   }
 });
 
 rightButton.addEventListener("click", function () {
-  if (counter < slidesLength) {
+  if (!smallDesktopMedia.matches && counter < slidesLength) {
     counter += 3;
+    crumbCounter++;
     const itemWidth = 1118 / 3;
     slideList.style.transform =
       "translateX(" + -1 * counter * itemWidth + "px)";
 
     leftButton.classList.add("review-section__button--active");
     leftButton.disabled = false;
+    sliderCrumbsImg[crumbCounter - 1].classList.remove(
+      "slider-crumbs__svg--active"
+    );
+    sliderCrumbsImg[crumbCounter].classList.add("slider-crumbs__svg--active");
     if (counter > slidesLength - 3 || counter % (slidesLength - 3) === 0) {
-      changeRightButtonActivity();
+      changeButtonActivity(rightButton);
+    }
+  } else if (smallDesktopMedia.matches) {
+    if (counter < slidesLength) {
+      counter += 2;
+      crumbCounter++;
+      const itemWidth = 766 / 2;
+      slideList.style.transform =
+        "translateX(" + -1 * counter * itemWidth + "px)";
+
+      leftButton.classList.add("review-section__button--active");
+      leftButton.disabled = false;
+      sliderCrumbsImg[crumbCounter - 1].classList.remove(
+        "slider-crumbs__svg--active"
+      );
+      sliderCrumbsImg[crumbCounter].classList.add("slider-crumbs__svg--active");
+      if (counter > slidesLength - 2 || counter % (slidesLength - 2) === 0) {
+        changeButtonActivity(rightButton);
+      }
     }
   }
 });
+
+if (tabletMedia.matches) {
+  sliderCrumbsImg.forEach(function (btn) {
+    btn.addEventListener("click", function (evt) {
+      btn.classList.add("slider-crumbs__svg--active");
+      let inactiveButtons = Array.from(sliderCrumbsImg).filter(function (
+        buttons
+      ) {
+        return buttons != btn;
+      });
+      inactiveButtons.forEach(function (button) {
+        button.classList.remove("slider-crumbs__svg--active");
+      });
+    });
+  });
+}

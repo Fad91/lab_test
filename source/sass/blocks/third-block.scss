@@ -20,6 +20,10 @@
     flex-direction: column;
     row-gap: 3px;
   }
+
+  @include vp--374 {
+    row-gap: 23px;
+  }
 }
 
 .third-block__text {
@@ -32,6 +36,10 @@
   @include vp--767 {
     max-width: 342px;
     text-align: center;
+  }
+
+  @include vp--374 {
+    width: 288px;
   }
 }
 
@@ -51,6 +59,10 @@
   @include vp--767 {
     margin: 0;
   }
+
+  @include vp--374 {
+    margin: 0 0 27px;
+  }
 }
 
 .third-block__content {
@@ -69,5 +81,9 @@
   @include vp--767 {
     order: -1;
     width: 342px;
+  }
+
+  @include vp--374 {
+    width: 288px;
   }
 }

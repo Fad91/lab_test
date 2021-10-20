@@ -4,7 +4,7 @@
   padding: 0 20px 0 10px;
   margin: 0;
   list-style: none;
-  column-gap: 5px;
+  column-gap: 17px;
 
   @include vp--1023 {
     padding: 0 10px 0 10px;
@@ -15,4 +15,15 @@
   border: none;
   background: none;
   cursor: pointer;
+  padding: 0;
+  width: 8px;
+  height: 8px;
+}
+
+.slider-crumbs__svg use {
+  fill: #c2c8cd;
+}
+
+.slider-crumbs__svg--active use {
+  fill: $color-primary;
 }

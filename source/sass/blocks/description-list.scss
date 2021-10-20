@@ -15,4 +15,9 @@
   @include vp--767 {
     grid-template-columns: 342px;
   }
+
+  @include vp--374 {
+    grid-template-columns: 288px;
+    justify-content: center;
+  }
 }

@@ -18,6 +18,11 @@
     max-width: 340px;
     min-height: 281px;
   }
+
+  @include vp--374 {
+    width: 288px;
+    min-height: 335px;
+  }
 }
 
 .review-item--hidden {
@@ -34,7 +39,7 @@
   display: grid;
   grid-template-columns: 44px auto;
   grid-template-rows: repeat(2, auto);
-  padding: 25px 22px 24px 22px;
+  padding: 25px 12px 15px 12px;
   column-gap: 16px;
 
   @include vp--1023 {
@@ -42,7 +47,7 @@
   }
 }
 
-.review-item__top-wrapper img {
+.review-item__top-wrapper picture {
   grid-row: 1 / -1;
   grid-column: 1 / 2;
 }

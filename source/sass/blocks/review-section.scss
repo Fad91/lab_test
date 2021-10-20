@@ -33,6 +33,10 @@
     padding: 0 16px;
     margin-bottom: 17px;
   }
+
+  @include vp--374 {
+    width: 320px;
+  }
 }
 
 .review-section__title {
@@ -65,19 +69,27 @@
   padding: 0;
   position: absolute;
 
-  @include vp--1219 {
+  @include vp--1023 {
     display: none;
   }
 }
 
 .review-section__button--left {
   top: 39%;
-  left: 0;
+  left: 10px;
+
+  @include vp--1219 {
+    left: 50px;
+  }
 }
 
 .review-section__button--right {
   top: 39%;
-  right: 0;
+  right: 10px;
+
+  @include vp--1219 {
+    right: 50px;
+  }
 }
 
 .review-section__button .review-section__svg use {

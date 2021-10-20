@@ -4,6 +4,10 @@
   background-position: center;
   position: relative;
 
+  @include retina {
+    background: url("../img/desktop-intro-background@2x.jpg") no-repeat;
+  }
+
   &::after {
     content: "";
     width: 100%;
@@ -12,5 +16,9 @@
     top: 0;
     left: 0;
     background-image: url("../img/desktop-mask-background.png");
+
+    @include retina {
+      background-image: url("../img/desktop-mask-background@2x.png");
+    }
   }
 }
